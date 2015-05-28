@@ -2,6 +2,13 @@
 
 Make your minion talk to Phabricator. This essentially duplicates (a good portion of) the functionality that Phabricator's PhabricatorBot has.
 
+## Installation
+Clone this into a directory named `Phabricator` in your minion's `plugins` subdirectory. In the `Phabricator` directory, run
+
+    $ composer install
+
+to install the necessary library.
+
 ## Configuration
 Put something like the following in your minion's `config.php`.
 
