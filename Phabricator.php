@@ -32,7 +32,7 @@ return $Phabricator
 
             foreach ($object_names as $object) {
                 if ($object == 'T1000') {
-                    $Phabricator->Minion->msg("T1000: A mimetic poly-alloy assassin controlled by Skynet");
+                    $Phabricator->Minion->msg("T1000: A mimetic poly-alloy assassin controlled by Skynet", $data['arguments'][0]);
                 } else {
                     if (is_object($response) and property_exists($response, $object)) {
                         $object = $response->$object;
