@@ -1,0 +1,15 @@
+{
+    "name": "rfreebern/minion-phabricator-plugin",
+    "description": "Minion, talk to Phabricator",
+    "require": {
+        "zolli/phabricator-php-api": "dev-master"
+    },
+    "license": "CC0",
+    "authors": [
+        {
+            "name": "Ryan Freebern",
+            "email": "ryan@freebern.org"
+        }
+    ],
+    "minimum-stability": "dev"
+}
