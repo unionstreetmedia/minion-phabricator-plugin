@@ -31,6 +31,14 @@ return $Phabricator
             $response = $Phabricator->conduit->Phid('lookup', array('names' => $object_names));
 
             foreach ($object_names as $object) {
+                if (isset($Phabricator->quarantine[$object])) {
+                    if (time() - $Phabricator->quarantine[$object] > 60) {
+                        unset($Phabricator->quarantine[$object]);
+                    } else {
+                        continue;
+                    }
+                }
+                $Phabricator->quarantine[$object] = time();
                 if ($object == 'T1000') {
                     $Phabricator->Minion->msg("T1000: A mimetic poly-alloy assassin controlled by Skynet", $data['arguments'][0]);
                 } else {
@@ -61,6 +69,8 @@ return $Phabricator
     foreach ($Phabricator->conf('Feed') as $channel => $config) {
         $Phabricator->last[$channel] = array(time(), $latest);
     }
+
+    $Phabricator->quarantine = array();
 })
 
 ->on('loop-end', function () use ($Phabricator) {
