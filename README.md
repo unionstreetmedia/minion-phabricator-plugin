@@ -25,4 +25,5 @@ Put something like the following in your minion's `config.php`.
 
 ## What it does
 * Responds to mentions of Phabricator objects (like T123, D456, P789, F1011) with their name and URL.
+* Quarantines objects (doesn't look them up) for 60 seconds afer they're mentioned, to avoid spamming.
 * Sends the feed info into the specified channel.
