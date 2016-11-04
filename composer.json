@@ -2,7 +2,7 @@
     "name": "rfreebern/minion-phabricator-plugin",
     "description": "Minion, talk to Phabricator",
     "require": {
-        "zolli/phabricator-php-api": "dev-master"
+        "zolli/phabricator-php-api": "1.0.*"
     },
     "license": "CC0",
     "authors": [
